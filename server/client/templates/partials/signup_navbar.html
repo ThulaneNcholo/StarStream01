@@ -1,0 +1,53 @@
+<style>
+  /* Colors */
+  :root {
+    --primary-color: linear-gradient(90deg, #7d02b6, #ef2793);
+    --background-color: #121114;
+    --secondary-color: #c6f432;
+    --secondary-background: #f5f5f7;
+    --text-color: #f2f1f3;
+    --secondary-text: #bfbac4;
+    --cameo-color: #6d2ebf;
+  }
+
+  .main_container {
+    background-color: var(--background-color);
+    padding-bottom: 34px;
+  }
+
+  .sign_card {
+    background-color: #201e23;
+    border-radius: 30px;
+  }
+
+  .navbar_sign_btn {
+    border-radius: 30px;
+    width: 100%;
+  }
+
+  .navbar_demo_btn {
+    background: var(--primary-color);
+    border-radius: 30px;
+    color: var(--text-color);
+    width: 100%;
+  }
+</style>
+
+<div class="main_container fixed-bottom pt-3 d-block d-md-none">
+  <div class="container">
+    <div class="sign_card p-3">
+      <div class="row">
+        <div class="col">
+          <a href="{% url 'sign-up' %}">
+            <button class="btn btn-light navbar_sign_btn py-2">Sign Up</button>
+          </a>
+        </div>
+        <div class="col">
+          <a href="{% url 'index'%}">
+            <button class="btn navbar_demo_btn py-2">Try Demo</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+<style>
+  /* Colors */
+  :root {
+    --primary-color: linear-gradient(90deg, #7d02b6, #ef2793);
+    --background-color: #121114;
+    --secondary-color: #c6f432;
+    --secondary-background: #f5f5f7;
+    --text-color: #f2f1f3;
+    --secondary-text: #bfbac4;
+    --cameo-color: #6d2ebf;
+  }
+
+  .bottom_navigation {
+    background-color: var(--background-color);
+    /* border-top-right-radius: 30px;
+    border-top-left-radius: 30px; */
+    padding-bottom: 34px;
+  }
+
+  .nav_container {
+    border-radius: 30px;
+    background-color: #201e23;
+  }
+
+  .nav_icons {
+    font-size: 20px;
+    color: #ef2793;
+  }
+
+  .nav_titles {
+    color: var(--text-color);
+    font-size: 12px;
+  }
+</style>
+
+<!-- ======= Bottom Navigation  ======= -->
+<div class="fixed-bottom bottom_navigation pt-2 d-block d-md-none">
+  <div class="container">
+    <div class="d-flex justify-content-around nav_container py-2">
+      <center>
+        <a href="{% url 'index' %}">
+          <div>
+            <i class="bi bi-house-door-fill nav_icons"></i>
+            <p class="mb-0 nav_titles">Home</p>
+          </div>
+        </a>
+      </center>
+      <center>
+        <a href="{% url 'category' %}">
+          <div>
+            <i class="bi bi-search nav_icons"></i>
+            <p class="mb-0 nav_titles">Explore</p>
+          </div>
+        </a>
+      </center>
+      <center>
+        <a href="{% url 'trending' %}">
+          <div>
+            <i class="bi bi-lightning-charge-fill nav_icons"></i>
+            <p class="mb-0 nav_titles">Trending</p>
+          </div>
+        </a>
+      </center>
+      <center>
+        <a href="{% url 'user-profile' %}">
+          <div>
+            <i class="bi bi-person-circle nav_icons"></i>
+            <p class="mb-0 nav_titles">Profile</p>
+          </div>
+        </a>
+      </center>
+
+      <!-- <a href="{% url 'user-profile' %}">
+        <button class="btn position-relative p-0">
+          <div>
+            <i class="bi bi-person-circle nav_icons"></i>
+            <p class="mb-0 nav_titles">Profile</p>
+          </div>
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+          >
+            2
+          </span>
+        </button>
+      </a> -->
+
+      <!-- <center>
+        <a href="{% url 'trending' %}">
+          <div>
+            <i class="bi bi-person-plus-fill nav_icons"></i>
+            <p class="mb-0 nav_titles">Join</p>
+          </div>
+        </a>
+      </center> -->
+    </div>
+  </div>
+</div>

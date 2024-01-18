@@ -1,0 +1,135 @@
+{% extends 'client/base.html' %}
+<!-- divider  -->
+{% load static %}
+<!-- divider  -->
+{% block content %}
+
+<style>
+  /* Colors */
+  :root {
+    --primary-color: linear-gradient(90deg, #7d02b6, #ef2793);
+    --background-color: #121114;
+    --secondary-color: #c6f432;
+    --secondary-background: #f5f5f7;
+    --text-color: #f2f1f3;
+    --secondary-text: #bfbac4;
+    --cameo-color: #6d2ebf;
+  }
+
+  .logo_image {
+    object-fit: contain;
+    height: 300px;
+    width: 100%;
+  }
+
+  .form_style {
+    border-radius: 15px;
+    width: 100%;
+  }
+
+  .option_btn {
+    width: 100%;
+    border-radius: 30px;
+  }
+
+  .btn_submit {
+    background: var(--primary-color);
+    width: 100%;
+    border-radius: 12px;
+    color: var(--text-color);
+  }
+</style>
+
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-12 col-lg-6 order-md-2">
+      <center>
+        <img src="{% static '/images/logo01.svg' %}" alt="" class="img-fluid" />
+      </center>
+    </div>
+
+    <div class="col-12 col-lg-6 order-md-1">
+      <h1 class="text_color">Sign up</h1>
+      <p class="secondary_text mb-5">
+        Secure your spot for our exclusive launch! Sign up now to be among the
+        first on StarStream and gain early access to a world of opportunities.
+      </p>
+
+      <form method="POST" autocomplete="off">
+        {% csrf_token %}
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control form_style"
+            id="floatingInput"
+            placeholder="First Name"
+            name="firstName"
+            required
+          />
+          <label for="floatingInput">First Name</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control form_style"
+            id="floatingInput"
+            placeholder="Last Name"
+            name="lastName"
+            required
+          />
+          <label for="floatingInput">Last Name</label>
+        </div>
+
+        <div class="form-floating mb-4">
+          <input
+            type="email"
+            class="form-control form_style"
+            id="floatingInput"
+            placeholder="name@example.com"
+            name="email"
+            required
+          />
+          <label for="floatingInput">Email address</label>
+        </div>
+
+        <p class="text_color">Pick your status!</p>
+        <div class="row mb-5">
+          <div class="col">
+            <input
+              type="radio"
+              class="btn-check"
+              name="options"
+              id="option1"
+              value="Fan"
+              autocomplete="off"
+              required
+            />
+            <label class="btn btn-light option_btn" for="option1">Fan</label>
+          </div>
+          <div class="col">
+            <input
+              type="radio"
+              class="btn-check"
+              name="options"
+              id="option2"
+              value="Celebrity"
+              autocomplete="off"
+              required
+            />
+            <label class="btn btn-light option_btn" for="option2"
+              >Celebrity</label
+            >
+          </div>
+        </div>
+
+        <button type="submit" name="submit_signUp" class="btn btn_submit py-3">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- divider  -->
+{% endblock %}

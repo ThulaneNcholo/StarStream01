@@ -1,0 +1,133 @@
+{% extends 'client/base.html' %}
+<!-- divider  -->
+{% load static %}
+<!-- divider  -->
+{% block content %}
+<style>
+  /* Colors */
+  :root {
+    --primary-color: linear-gradient(90deg, #7d02b6, #ef2793);
+    --background-color: #121114;
+    --secondary-color: #c6f432;
+    --secondary-background: #f5f5f7;
+    --text-color: #f2f1f3;
+    --secondary-text: #bfbac4;
+    --cameo-color: #6d2ebf;
+  }
+
+  .text_color {
+    color: var(--text-color);
+  }
+
+  .secondary_text {
+    color: var(--secondary-text);
+  }
+
+  .profile_img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .request_card {
+    padding: 50px;
+    width: 100%;
+    position: relative;
+    background: var(--primary-color);
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+  }
+
+  .category_title {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    color: var(--text-color);
+  }
+
+  .category_name_card {
+    border-color: var(--text-color);
+  }
+
+  .category_btns {
+    width: 100%;
+  }
+</style>
+
+<div class="container my-5">
+  <i class="bi bi-arrow-left-circle-fill back_btn" onclick="history.back()"></i>
+
+  <h3 class="text_color mt-5">{{celeb.first_name}} {{celeb.last_name}}</h3>
+  <p class="secondary_text mb-4">{{celeb.bio}}</p>
+  <div class="row">
+    <div class="col-12 col-lg-6 mb-5">
+      <img class="profile_img mb-4" src="{{celeb.profile_pic.url}}" alt="" />
+
+      <div class="row">
+        <div class="col-12 col-md-6 mb-3">
+          <button class="btn btn-outline-light category_btns py-3 rounded-pill">
+            {{celeb.category.name}}
+          </button>
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+          <button class="btn btn-light category_btns py-3 rounded-pill">
+            Personalized Video <span class="fw-bold">R{{celeb.price}}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6 mb-5">
+      <h3 class="text_color mb-3">Request</h3>
+      <p class="secondary_text">Select your special occasion</p>
+      <div class="row">
+        <div class="col-6 col-md-4 mb-3">
+          <div class="request_card">
+            <p class="category_title mb-0">Birthday</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 mb-3">
+          <div class="request_card">
+            <p class="category_title mb-0">Pep Talk</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 mb-3">
+          <div class="request_card">
+            <p class="category_title mb-0">Advice</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 mb-3">
+          <div class="request_card">
+            <p class="category_title mb-0">Roast</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 mb-3">
+          <div class="request_card">
+            <p class="category_title mb-0">Question</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 mb-3">
+          <div class="request_card">
+            <p class="category_title mb-0">Other</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <h3 class="text_color mb-4">
+    How StarStream Works <i class="bi bi-arrow-right"></i>
+  </h3>
+  <!-- ======= How it works Partial ======= -->
+  {% include 'partials/howWorks.html' %}
+</div>
+
+<!-- divider  -->
+{% endblock %}

@@ -1,0 +1,308 @@
+<!-- divider  -->
+{% load static %}
+<!-- divider  -->
+
+<style>
+  /* Colors */
+  :root {
+    --primary-color: linear-gradient(90deg, #7d02b6, #ef2793);
+    --background-color: #121114;
+    --secondary-color: #c6f432;
+    --secondary-background: #f5f5f7;
+    --text-color: #f2f1f3;
+    --secondary-text: #bfbac4;
+    --cameo-color: #6d2ebf;
+  }
+
+  .text_color {
+    color: var(--text-color) !important;
+  }
+
+  .secondary_text {
+    color: var(--secondary-text);
+  }
+
+  .navbar_style {
+    background-color: var(--background-color);
+  }
+
+  .navbar-brand {
+    color: #ef2793 !important;
+    font-family: 900;
+  }
+
+  .notification_icon {
+    color: #ef2793;
+  }
+
+  /* desktop offcanvas  */
+  .desktop_background {
+    background-color: #201e23;
+  }
+
+  /* mobile offcanvas  */
+  .offcanvas-bottom {
+    height: 70vh;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    background-color: #201e23;
+  }
+
+  .notification_bell {
+    color: #ef2793;
+    font-size: 22px;
+  }
+
+  .chevron_icon {
+    font-size: 22px;
+  }
+
+  .top_navbar_sign {
+    color: #ef2793 !important;
+  }
+
+  .btn_learn {
+    background: var(--primary-color);
+    border-radius: 12px;
+    color: var(--text-color);
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light navbar_style py-3">
+  <div class="container">
+    <!-- <a class="navbar-brand fw-bold" href="{% url 'index' %}">StarStream</a>  -->
+
+    <a class="navbar-brand fw-bold" href="{% url 'index' %}">
+      <img
+        src="{% static '/images/logo_icon.svg' %}"
+        alt=""
+        width="30"
+        height="24"
+        class="d-inline-block align-text-top"
+      />
+      StarStream
+    </a>
+
+    <button
+      class="navbar-toggler d-none d-md-block d-lg-none border-light"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="bi bi-list text-light"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active text_color"
+            aria-current="page"
+            href="{% url 'index' %}"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text_color" href="{% url 'category' %}">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text_color" href="{% url 'trending' %}"
+            >Trending</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text_color" href="{% url 'landing-page' %}"
+            >About</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text_color" href="{% url 'user-profile' %}"
+            >Profile</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link top_navbar_sign" href="{% url 'sign-up' %}"
+            >Sign Up</a
+          >
+        </li>
+      </ul>
+      <div class="d-flex">
+        <button
+          type="button"
+          class="btn btn-light position-relative"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#destop_offcanvas"
+          aria-controls="destop_offcanvas"
+        >
+          <i class="bi bi-bell-fill notification_icon"></i>
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+          >
+            3
+          </span>
+        </button>
+      </div>
+    </div>
+    <!-- mobile notification btn start  -->
+    <button
+      type="button"
+      class="btn btn-light position-relative d-block d-md-none"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#mobile_offcanvas"
+      aria-controls="mobile_offcanvas"
+    >
+      <i class="bi bi-bell-fill notification_icon"></i>
+      <span
+        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+      >
+        3
+      </span>
+    </button>
+    <!-- mobile notification btn end  -->
+  </div>
+</nav>
+
+<!-- desktop Offcanvas  -->
+<div
+  class="offcanvas offcanvas-start desktop_background"
+  tabindex="-1"
+  id="destop_offcanvas"
+  aria-labelledby="destop_offcanvasLabel"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title text_color" id="destop_offcanvasLabel">
+      Notifications
+    </h5>
+    <button
+      type="button"
+      class="btn text-reset text-light"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    >
+      <i class="bi bi-x-lg text-light"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a href="{% url 'user-profile' %}">
+      <div class="row mb-3">
+        <div class="col-2">
+          <i class="bi bi-bell-fill notification_bell"></i>
+        </div>
+        <div class="col">
+          <p class="mb-0 text_color fw-bold">Birthday Video</p>
+          <p class="mb-0 secondary_text">Ready to download</p>
+        </div>
+        <div class="col-2">
+          <i class="bi bi-chevron-right text-light chevron_icon"></i>
+        </div>
+      </div>
+    </a>
+    <!-- end item  -->
+    <a href="{% url 'user-profile' %}">
+      <div class="row mb-3">
+        <div class="col-2">
+          <i class="bi bi-bell-fill notification_bell"></i>
+        </div>
+        <div class="col">
+          <p class="mb-0 text_color fw-bold">Pep Talk Video</p>
+          <p class="mb-0 secondary_text">Ready to download</p>
+        </div>
+        <div class="col-2">
+          <i class="bi bi-chevron-right text-light chevron_icon"></i>
+        </div>
+      </div>
+    </a>
+    <!-- end item  -->
+    <a href="{% url 'user-profile' %}">
+      <div class="row mb-3">
+        <div class="col-2">
+          <i class="bi bi-bell-fill notification_bell"></i>
+        </div>
+        <div class="col">
+          <p class="mb-0 text_color fw-bold">Celebration Video</p>
+          <p class="mb-0 secondary_text">Ready to download</p>
+        </div>
+        <div class="col-2">
+          <i class="bi bi-chevron-right text-light chevron_icon"></i>
+        </div>
+      </div>
+    </a>
+    <!-- end item  -->
+  </div>
+</div>
+
+<!-- Mobile Offcanvas  -->
+<div
+  class="offcanvas offcanvas-bottom"
+  tabindex="-1"
+  id="mobile_offcanvas"
+  aria-labelledby="mobile_offcanvasLabel"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title text_color" id="mobile_offcanvasLabel ">
+      Notifications
+    </h5>
+    <button
+      type="button"
+      class="btn text-reset text-light"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    >
+      <i class="bi bi-x-lg text-light"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a href="{% url 'user-profile' %}">
+      <div class="row mb-3">
+        <div class="col-2">
+          <i class="bi bi-bell-fill notification_bell"></i>
+        </div>
+        <div class="col">
+          <p class="mb-0 text_color fw-bold">Birthday Video</p>
+          <p class="mb-0 secondary_text">Ready to download</p>
+        </div>
+        <div class="col-2">
+          <i class="bi bi-chevron-right text-light chevron_icon"></i>
+        </div>
+      </div>
+    </a>
+    <!-- end item  -->
+    <a href="{% url 'user-profile' %}">
+      <div class="row mb-3">
+        <div class="col-2">
+          <i class="bi bi-bell-fill notification_bell"></i>
+        </div>
+        <div class="col">
+          <p class="mb-0 text_color fw-bold">Pep Talk Video</p>
+          <p class="mb-0 secondary_text">Ready to download</p>
+        </div>
+        <div class="col-2">
+          <i class="bi bi-chevron-right text-light chevron_icon"></i>
+        </div>
+      </div>
+    </a>
+    <!-- end item  -->
+    <a href="{% url 'user-profile' %}">
+      <div class="row mb-3">
+        <div class="col-2">
+          <i class="bi bi-bell-fill notification_bell"></i>
+        </div>
+        <div class="col">
+          <p class="mb-0 text_color fw-bold">Celebration Video</p>
+          <p class="mb-0 secondary_text">Ready to download</p>
+        </div>
+        <div class="col-2">
+          <i class="bi bi-chevron-right text-light chevron_icon"></i>
+        </div>
+      </div>
+    </a>
+    <!-- end item  -->
+
+    <h6 class="secondary_text mt-5">Learn more about StartStream.</h6>
+    <a href="{% url 'landing-page' %}">
+      <button class="btn btn_learn">Get Started</button>
+    </a>
+  </div>
+</div>

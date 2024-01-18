@@ -1,0 +1,374 @@
+{% extends 'client/base.html' %}
+<!-- divider  -->
+{% load static %}
+<!-- divider  -->
+{% block content %}
+
+<style>
+  /* Colors */
+  :root {
+    --primary-color: linear-gradient(90deg, #7d02b6, #ef2793);
+    --background-color: #121114;
+    --secondary-color: #c6f432;
+    --secondary-background: #f5f5f7;
+    --text-color: #f2f1f3;
+    --secondary-text: #bfbac4;
+    --cameo-color: #6d2ebf;
+  }
+
+  .text_color {
+    color: var(--text-color);
+  }
+
+  .secondary_text {
+    color: var(--secondary-text);
+  }
+
+  .section_padding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  /* background: linear-gradient(#7D02B6, #EF2793);  */
+  /* background: linear-gradient(270deg, #7D02B6, #EF2793);  */
+
+  .hero_card {
+    background: var(--primary-color);
+    width: 100%;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+  }
+
+  .hero_image {
+    width: 100%; /* Ensures the image takes up the full width of its parent */
+    height: 400px; /* Allows the image to maintain its aspect ratio */
+    object-fit: cover;
+  }
+
+  .hero_title_fonts {
+    font-family: "Archivo Black", sans-serif;
+    color: var(--text-color);
+  }
+
+  .browse_btn {
+    background-color: var(--secondary-color);
+  }
+
+  /* category style  */
+  .category_title {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    color: var(--text-color);
+  }
+
+  .category_one {
+    padding: 74px;
+    width: 100%;
+    position: relative;
+    background-color: var(--secondary-color);
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+  }
+
+  .musician_text {
+    color: var(--background-color) !important;
+  }
+
+  .category_two {
+    padding: 74px;
+    width: 100%;
+    /* background-color: #fec4d0;  */
+    background-color: #7d02b6;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+    position: relative;
+  }
+
+  .category_three {
+    padding: 74px;
+    width: 100%;
+    /* background-color: #c09ff8;  */
+    background-color: #ef2793;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+    position: relative;
+  }
+
+  .category_four {
+    background: linear-gradient(90deg, #b358e3, #f17fbd);
+    padding: 74px;
+    width: 100%;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+    position: relative;
+  }
+
+  .category_five {
+    background: linear-gradient(90deg, #5d027d, #aa0266);
+    padding: 74px;
+    width: 100%;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+    position: relative;
+  }
+
+  .btn_all {
+    background: var(--primary-color);
+    border-radius: 10px;
+    color: var(--text-color);
+  }
+
+  .category_hover:hover {
+    background: var(--text-color);
+    color: #ef2793 !important;
+    cursor: pointer;
+  }
+
+  .seconday_category:hover {
+    background: var(--secondary-color);
+    cursor: pointer;
+  }
+
+  /* how it works style start  */
+  .work_card {
+    background: linear-gradient(90deg, #7d02b6, #34021e);
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  /* mobile style start  */
+  .mobile_heading {
+    color: #ef2793;
+  }
+
+  .mobile_card {
+    /* background: var(--primary-color); */
+    width: 100%;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+    /* height: 200px; */
+  }
+
+  .mobile_image {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+  }
+
+  .mobile_hero_sign_btn {
+    border-radius: 30px;
+  }
+</style>
+
+<!-- ======= Hero Section ======= -->
+<div class="container section_padding d-none d-md-block">
+  <div class="hero_card mt-5">
+    <div class="row">
+      <div
+        class="col-12 col-md-6 d-flex align-items-center justify-content-center"
+      >
+        <div class="p-3">
+          <h1 class="hero_title_fonts mb-4">
+            Star-Studded Surprises: Unleash the Power of Personalized Videos!
+          </h1>
+          <a href="{% url 'sign-up' %}">
+            <button class="btn browse_btn rounded">Sign Up</button>
+          </a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <img
+          src="{% static '/images/starImage01 1.svg' %}"
+          alt=""
+          class="hero_image"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======= Mobile Hero section ======= -->
+<div class="container section_padding d-block d-md-none">
+  <h1 class="text_color fw-bold mb-4">
+    <span class="mobile_heading">StarStream</span> : Elevate Your Celebrations
+    with Personalized Stardom
+  </h1>
+  <p class="secondary_text">
+    Get personalized video messages from top celebrities for any occasion. Your
+    moment, their message – let stardom begin
+  </p>
+  <a href="{% url 'sign-up'%}">
+    <button class="btn btn-light mobile_hero_sign_btn mt-3 mb-5">
+      Sign Up Today!
+    </button>
+  </a>
+
+  <div class="mobile_card">
+    <img
+      src="{% static '/images/mobile01.svg' %}"
+      alt=""
+      class="mobile_image"
+    />
+  </div>
+</div>
+
+<!-- ======= CATAGORY SECTION ======= -->
+<!-- <div class="container section_padding">
+  <h3 class="text_color mb-3">
+    Top Categories <i class="bi bi-arrow-right"></i>
+  </h3>
+  <div class="row">
+    <div class="col">
+      <div class="category_one text-center">
+        <h3 class="category_title musician_text">Musicians</h3>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row">
+        <div class="col-12 col-md">
+          <div class="category_two">
+            <h3 class="category_title">Actors</h3>
+          </div>
+        </div>
+        <div class="col-12 col-md">
+          <div class="category_three">
+            <h3 class="category_title">Athletes</h3>
+          </div>
+        </div>
+        <div class="col d-none d-md-block">
+          <div class="category_four">
+            <h3 class="category_title">Influeners</h3>
+          </div>
+        </div>
+        <div class="col d-none d-md-block">
+          <div class="category_five">
+            <h3 class="category_title">Kids</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- ======= CATAGORY SECTION ======= -->
+<div class="container section_padding">
+  <div class="row mb-4">
+    <div class="col-6">
+      <div class="d-flex mb-0">
+        <h3 class="text_color">Top Categories</h3>
+        <h3 class="text_color mx-2">
+          <i class="bi bi-arrow-right d-none d-md-block"></i>
+        </h3>
+      </div>
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+      <h3><i class="bi bi-arrow-right text_color d-block d-md-none"></i></h3>
+      <button class="btn btn_all d-none d-md-block">see all</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-4 mb-3">
+      <a href="{% url 'category'%}">
+        <div class="category_one text-center category_hover">
+          <h3 class="category_title musician_text">Musicians</h3>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-md mb-3">
+      <a href="{% url 'category'%}">
+        <div class="category_two seconday_category">
+          <h3 class="category_title">Actors</h3>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-md mb-3">
+      <a href="{% url 'category'%}">
+        <div class="category_three seconday_category">
+          <h3 class="category_title">Athletes</h3>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-md mb-3">
+      <a href="{% url 'category'%}">
+        <div class="category_four seconday_category">
+          <h3 class="category_title">Influeners</h3>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-md mb-3">
+      <a href="{% url 'category'%}">
+        <div class="category_five seconday_category">
+          <h3 class="category_title">Kids</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ======= TRENDING SECTION ======= -->
+<div class="container section_padding">
+  {% include 'partials/trendingPartial.html' %}
+</div>
+
+<!-- ======= HOW IT WORKS SECTION ======= -->
+<div class="container section_padding">
+  <h3 class="text_color mb-3">
+    How StarStream Works <i class="bi bi-arrow-right"></i>
+  </h3>
+  <p class="secondary_text">
+    Create unforgettable moments with StarStream! Request personalized video
+    messages from your favorite celebrities for birthdays, anniversaries, or any
+    special occasion. Connect with the stars and make memories today!
+  </p>
+  <div class="row">
+    <div class="col-12 col-md-4 mb-4">
+      <div class="work_card p-3 h-100">
+        <h4 class="text_color fw-bold">Browse Celebrities</h4>
+        <p class="text_color">
+          Explore a diverse lineup of celebrities from various fields. From
+          actors and musicians to influencers and sports personalities, we've
+          got a star-studded cast waiting for you.
+        </p>
+      </div>
+    </div>
+    <div class="col-12 col-md-4 mb-4">
+      <div class="work_card p-3 h-100">
+        <h4 class="text_color fw-bold">Submit Your Request</h4>
+        <p class="text_color">
+          Fill out a simple form to let your chosen celebrity know what you're
+          celebrating and any specific details you want in the video. It's your
+          moment – make it yours!
+        </p>
+      </div>
+    </div>
+    <div class="col-12 col-md-4 mb-4">
+      <div class="work_card p-3 h-100">
+        <h4 class="text_color fw-bold">Get Your Video</h4>
+        <p class="text_color">
+          Once your request is accepted, sit back and wait for your personalized
+          video message to arrive. It's like having a one-on-one with your
+          favorite celebrity!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- divider  -->
+{% endblock %}

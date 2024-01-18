@@ -1,0 +1,45 @@
+{% extends 'client/base.html' %}
+<!-- divider  -->
+{% load static %}
+<!-- divider  -->
+{% block content %}
+
+<style>
+  /* Colors */
+  :root {
+    --primary-color: linear-gradient(90deg, #7d02b6, #ef2793);
+    --background-color: #121114;
+    --secondary-color: #c6f432;
+    --secondary-background: #f5f5f7;
+    --text-color: #f2f1f3;
+    --secondary-text: #bfbac4;
+    --cameo-color: #6d2ebf;
+  }
+</style>
+
+<div class="container pt-5">
+  <center>
+    <div class="successful_card">
+      <img
+        src="{% static '/images/logo01.svg' %}"
+        alt=""
+        class="img-fluid mb-5"
+      />
+
+      <h3 class="text_color">Thank You for Joining StarStream</h3>
+      <p class="secondary_text">
+        Congrats! 🌟 You're on board with StarStream. Get set for personalized
+        moments! Stay tuned for exclusive early access details and exciting
+        updates. Thanks for choosing StarStream. Excited to share the magic on
+        launch day
+      </p>
+
+      <a href="{% url 'index' %}">
+        <button class="btn btn-light explore_btn px-5">Explore</button>
+      </a>
+    </div>
+  </center>
+</div>
+
+<!-- divider  -->
+{% endblock %}
